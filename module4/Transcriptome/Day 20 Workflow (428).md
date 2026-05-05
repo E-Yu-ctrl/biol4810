@@ -5,7 +5,7 @@
 1. Find differential gene expression
 
    1. DESeq2 (Galaxy Version 2.11.40.8+galaxy2)
-   2. Parameters: 
+   2. Parameters:
 
       1. Factor - Growth\_Media
 
@@ -22,22 +22,22 @@
 
          1. Generate plots for visualizing the analysis results
          2. Output normalized counts
-   3. Results: Result and plot files, download plots, make sure to visualize them 
+   3. Results: Result and plot files, download plots, make sure to visualize them
 
       1. Focus on adjusted p-value (P-ad column)
 2. Filter out adjusted p-values over 0.05
 
    1. Tool: Filter data on any column using simple expressions (Galaxy Version 1.1.1)
-   2. Parameters: 
+   2. Parameters:
 
       1. Input DESeq2 collection
       2. With following conditions: c7<0.05
    3. Leave everything else as default
-   4. Results: 
+   4. Results:
 3. Filter out insignificant data from log2(FC)
 
    1. Tool: Filter data on any column using simple expressions (Galaxy Version 1.1.1)
-   2. Parameters: 
+   2. Parameters:
 
       1. Input previous Filter collection
       2. With following conditions:
@@ -64,7 +64,7 @@
 5. Put header on file
 
    1. Tool: Concatenate multiple datasets or collections (Galaxy Version 1.0.0)
-   2. Parameters: 
+   2. Parameters:
 
       1. Concatenate dataset - Header file
       2. Dataset - Most recent Filter file
@@ -72,7 +72,7 @@
 6. Upload everything to GitHub
 
    1. Tool: GitBash
-   2. Parameters: 
+   2. Parameters:
 
       1. Hold Shift and right click into Unix\_BIOL4810
       2. Drag new folder into GitBash (module4)

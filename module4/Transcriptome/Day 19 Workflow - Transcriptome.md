@@ -48,22 +48,24 @@
 4. Take short reads and figure out where they belong and how they fit together
 
    1. Tool: StringTie (Galaxy Version 2.2.3+galaxy0)
-   2. Parameters: Input options -> Short reads, HISAT2 output collection should auto. go into dropdown menu -> Run Tool
+   2. Parameters: Input options -> Short reads, HISAT2 output collection should auto. go into dropdown menu, use ref genome from hx (promicromonospora file) -> Run Tool
    3. File saved: N/A
 5. Merge transcripts together
 
    1. Tool: StringTie merge (Galaxy Version 2.2.3+galaxy0)
    2. Parameters: "Transcripts" -> "Data Collection" -> select StringTie output file -> Run Tool
    3. File saved: N/A
-6. Compare assembled transcripts from ShoeTie to an annotated reference genome
-
-   1. Tool: GffCompare (Galaxy Version 0.12.10+galaxy0)
-   2. Parameters: "Multiple Datasets" -> select your ShoeTie merge dataset (not the assembled transcripts) and the promicromonospore.gff file; Leave everything else as default -> Run tool
-   3. File saved: N/A
+1. \*WE ARE NOT DOING GFFCOMPARE ANYMORE\*
 7. Measure gene expression in RNA-Seq via BAM files
 
    1. Tool: featureCounts (Galaxy Version 2.1.1+galaxy0)
-   2. Parameters: "Alignment file" -> "Dataset Collection" -> Input HISAT2 aligned reads collection (BAM) file; "Gene annotation file" -> "A GFF/GTF file in your history" -> Input GffCompare combined transcripts collection file; "Does the input have read pairs?" -> "Yes, paired end and count them as 1 single fragment" -> Run tool
+   2. Parameters: 
+
+      1. Alignment file - HISAT2 file
+      2. Gene annotation file - NEW StringTie merge file
+      3. GFF Gene Identifier - transcript\_id
+      4. Does the input have read pairs? - PE\_fragments (paired end fragments)
+      5. Leave everything else as default
    3. File saved: N/A
 8. Upload module4 to GitHub
 
