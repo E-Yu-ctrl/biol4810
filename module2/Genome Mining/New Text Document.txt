@@ -1,0 +1,43 @@
+Day 14 Workflow - (3/12/26)
+
+Step 1: Search for antimicrobial resistance (AMR) genes using the Comprehensive Antibiotic Resistance Database (CARD)
+Tool: https://card.mcmaster.ca/rgi/results/ZCatSSSBz3viUpGAZ1kAYehFXQjTA8YXqd47lQmC
+Version: 4.0.1
+Parameters: Upload filtered contigs (Unk1_SPAdes_filtered_contigs)
+File saved: Screenshots of results/hits ("CARD_results"), download table if more results than the page can fit
+
+Step 2: Search for antimicrobial resistance (AMR) genes using ResFinder
+Tool: https://cge.food.dtu.dk/services/ResFinder/
+Version: 4.7.2
+Parameters: Default; Upload filtered contigs (Unk1_SPAdes_filtered_contigs)
+File saved: Screenshot of results/hits
+
+Step 3: Predict pathogenic potential
+Tool: https://genepi.food.dtu.dk/job/pathogenfinder/celv089jjxiutt26two4a758kzgg6qxr
+Version: 0.6.0
+Parameters: Upload filtered contigs (Unk1_SPAdes_filtered_contigs)
+File saved: Screenshot of "Acquired AMR" gene hits table
+
+Step 4: Secondary metabolites production
+Tool: https://antismash.secondarymetabolites.org/#!/show/job/bacteria-4b6f8e88-e5d0-4170-83e4-fde317d4d533
+Version: 8.0.4
+Parameters: Default; Upload filtered contigs (Unk1_SPAdes_filtered_contigs)
+File saved: Screenshot of Overview pg. (show clusters)
+
+Step 5: Search for prophage
+Tool: https://phaster.ca/submissions/ZZ_cf441c9844
+Version: 4.3X
+Parameters: Check "My input consists of multiple separate contigs", upload filtered contigs (Unk1_SPAdes_filtered_contigs), submit
+File saved: Screenshot of results summary
+
+Step 6: Look for pathogenicity islands
+Tool: https://www.pathogenomics.sfu.ca/islandviewer/
+Version: 4
+Parameters: Click "Genome upload" @ top of screen, upload Prokka GenBank file (Prokka.gfk.genbank), select reference strain (Salmonella Typhimurium)
+File saved: Screenshot of results map
+
+Step 7: Search for CRISPR regions
+Tool: https://crisprcas.i2bc.paris-saclay.fr/CrisprCasFinder/Index
+Version: 1.1.2
+Parameters: Default; Upload filtered contigs (Unk1_SPAdes_filtered_contigs)
+File saved: Screenshot of results (arrays & Cas summary)

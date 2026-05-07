@@ -1,0 +1,7 @@
+Section Report 2 (Due 3/24/26)
+
+Step 1: Download raw reads from "Sequences for BIOL 4810" from Dr. Tricia Van Laar and upload them to FastQC on Galaxy
+Tool: FastQC (Galaxy)
+Ver.: Galaxy Version 0.74+galaxy1
+Parameter: Multiple datasets, upload both raw read files (Emma_R1.fastq, Emma_R2.fastq), download HTML files
+Files saved: HTML files of the raw reads (SR2_rawQC_1.gz.HTML, SR2_rawQC_2.gz.HTML)

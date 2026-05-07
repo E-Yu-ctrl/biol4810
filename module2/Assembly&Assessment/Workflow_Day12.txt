@@ -1,0 +1,26 @@
+Workflow_Day12
+
+## Sample
+- sampleID: Unk1
+- raw data: WT_R1.fastq, WT_R2.fastq
+
+## Tools (Galaxy / usegalaxy.org)
+- FastQC: Galaxy Version 0.74+galaxy1
+- fastp: Galaxy Version 1.1.0+galaxy0
+- SPAdes: Galaxy Version 4.2.0+galaxy0
+- QUAST: Galaxy Version 5.3.0+galaxy1
+
+## Steps
+1. FastQC on raw reads → saved report as: YOUR_SAMPLEID_raw_fastqc.html
+2. fastp trimming (default settings) → saved report as: YOUR_SAMPLEID_fastp_report.html
+3. FastQC on trimmed reads → saved report as: YOUR_SAMPLEID_trimmed_fastqc.html
+4. SPAdes assembly on trimmed reads → saved contigs as: YOUR_SAMPLEID_spades_contigs.fasta
+5. QUAST evaluation on contigs → saved report as: YOUR_SAMPLEID_quast_report.pdf
+
+## Notes / interpretation
+- (1–3 bullets on what changed after trimming)
+	Read length got shorter
+	
+- (1–3 bullets on what QUAST suggests about contiguity)
+	Genome isn't very fragmented (79 contigs)
+	L50 = 8 -> long contigs
